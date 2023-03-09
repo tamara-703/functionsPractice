@@ -98,12 +98,29 @@ let drinks = [
     { name: "lime", price: 10 }
 ]
 
-for(let i = 0; i < drinks.length; i++)
+function sortDrinksByPrice()
 {
-    sortDrinksByPrice[drinks[i]];
+    // for (let i = 0; i < drinks.length; i++)
+    // {
+    //     drinks.sort(function(a,b) {
+    //         return a.price - b.price
+    //     })
+    // }
+
+    drinks.sort(function(prop1,prop2)
+    {
+        if(prop1.price < prop2.price)
+        {
+            drinks[0] = {name: prop1.name, price: prop1.price}
+            drinks[1] = {name: prop2.name, price: prop2.price}
+        } else {
+            drinks[0] = {name: prop2.name, price: prop2.price}
+            drinks[1] = {name: prop1.name, price: prop1.price}
+        }
+
+        console.log(drinks);
+    })
+
 }
 
-function sortDrinksByPrice(obj)
-{
-    console.log(obj.price.sort());
-}
+sortDrinksByPrice();
